@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       <script type="text/javascript">
         document.querySelector("#registerButton").onclick = () => {
-          location.href="register.php";
+          location.href="register-view.php";
         };
       </script>
 
