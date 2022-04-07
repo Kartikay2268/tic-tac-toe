@@ -19,7 +19,7 @@ $user->setID($_SESSION['id']);
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   if(!isLoggedIn()) {
-    die("Unauthourised");
+    redirect('/tictactoe/invalid.php'); 
   }
 
   $name = trim($_POST['name']);

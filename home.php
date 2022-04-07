@@ -2,6 +2,7 @@
   session_start();
   require 'classes/user.php';
   require 'classes/Database.php';
+  require 'includes/header.php'; 
 
   $db = new Database();
   $conn = $db->getConn();
@@ -9,7 +10,7 @@
   $user = new User();
   $user->setID($_SESSION['id']);
 
- require 'includes/header.php'; ?>
+ ?>
 
 <div class="flex-container">
 
