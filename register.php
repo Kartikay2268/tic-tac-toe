@@ -11,7 +11,7 @@ $name = '';
 $username = '';
 $password = '';
 $errors = [];
-$bool = true;
+$correctDetails = true;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -22,21 +22,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if(empty($name)){
     $errors[] = "Please enter a name";
-    $bool = false;
+    $correctDetails = false;
     $name = "";
   }
   if (empty($username) || !filter_var($username, FILTER_VALIDATE_EMAIL)) {
     $errors[] = "Please enter a valid username";
     $username = "";
-    $bool = false;
+    $correctDetails = false;
   }
   if (empty($password) || strlen($password) < 8) {
     $errors[] = "Password should have atleast 8 characters";
     $password = "";
-    $bool = false;
+    $correctDetails = false;
   }
 
-  if($bool) {
+  if($correctDetails) {
 
     $sql = 'INSERT INTO users (name, username, password)
             VALUES (:name, :username, :password)';

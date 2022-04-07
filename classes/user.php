@@ -50,6 +50,8 @@ class User
     $stmt->execute();
     if($user = $stmt->fetch()){
       return $user->id;
+    } else {
+      return 0;
     }
   }
 
@@ -93,6 +95,8 @@ class User
 
     if($user = $stmt->fetch()){
       return $user->score;
+    } else {
+      return 0;
     }
   }
 
@@ -108,6 +112,8 @@ class User
     $stmt->execute();
     if($user = $stmt->fetch()){
       return $user->name;
+    } else {
+      return "NaN";
     }
 
   }
@@ -124,6 +130,8 @@ class User
     $stmt->execute();
     if($user = $stmt->fetch()){
       return $user->username;
+    } else {
+      return "NaN";;
     }
 
   }

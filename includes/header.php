@@ -1,4 +1,6 @@
-<?php require 'includes/auth.php' ?>
+<?php 
+require 'includes/auth.php';
+require 'includes/url.php' ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -35,7 +37,7 @@
           </div>
 
         <?php else: ?>
-          <?php die ("Unauthourised Access!") ?>
+          <?php redirect('/tictactoe/invalid.php');?>
         <?php endif; ?>
       </div>
 

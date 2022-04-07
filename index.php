@@ -5,6 +5,8 @@ require 'classes/Database.php';
 require 'classes/user.php';
 
 $errors = [];
+$username = "";
+$password = "";
 
 if(isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']){
   redirect('/tictactoe/home.php');
@@ -15,12 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $db = new Database();
   $conn = $db->getConn();
 
-  if (User::authenticate($conn, $_POST['username'], $_POST['password'])){
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  if (User::authenticate($conn, $username, $password)){
 
       session_regenerate_id(true);
 
       $_SESSION['is_logged_in'] = true;
-      $_SESSION['id'] = User::getID($conn, $_POST['username']);
+      $_SESSION['id'] = User::getID($conn,$username);
 
       redirect('/tictactoe/home.php');
   } else {
@@ -67,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
       <script type="text/javascript">
         document.querySelector("#registerButton").onclick = () => {
-          location.href="register-view.php";
+          location.href="register.php";
         };
       </script>
 

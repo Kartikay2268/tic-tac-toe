@@ -1,7 +1,8 @@
 <?php
 require 'includes/url.php';
-session_start();
 require 'register-model.php';
+session_start();
+
 $name = "";
 $username = "";
 $password = "";

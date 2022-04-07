@@ -4,7 +4,7 @@
 
   //if(!isLoggedIn()){
     //die ("Acess Unauthourised!"); }x
-  ?>
+  require 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <?php require 'includes/header.php'; ?>
+    
     <div class="header">
       <!-- <h3 style="text-align: center"><a href="home.php">Home</a></h3> -->
     </div>
@@ -33,7 +33,7 @@
         <div id="block_8" class="block"></div>
       </div>
       <h3 id="winner"></h3>
-      <button class = "button-newgame" onclick="new_game()"><h33>New Game<h3></button>
+      <button class = "button-newgame" onclick="new_game()"><h3>New Game<h3></button>
     </div>
     <script src="/tictactoe/js/game.js"></script>
     <script src="js/activity.js"></script>

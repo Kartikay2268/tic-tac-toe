@@ -3,6 +3,7 @@ session_start();
 require "classes/user.php";
 require "classes/Database.php";
 require "includes/header.php";
+require "includes/url.php";
 
 $name = '';
 $email = '';
@@ -19,7 +20,7 @@ $user->setID($_SESSION['id']);
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   if(!isLoggedIn()) {
-    die("Unauthourised");
+    redirect('/tictactoe/invalid.php');
   }
 
   $name = trim($_POST['name']);
